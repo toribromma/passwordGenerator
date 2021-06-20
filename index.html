@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <h2>Generate a Password</h2>
+    <form>
+      <input type="checkbox" name="character" value="specialCharacters" />
+      <label for="specialCharacters"> Special characters</label><br />
+      <input type="checkbox" name="character" value="numericCharacters" />
+      <label for="numericCharacters"> Numeric Characters</label><br />
+      <input type="checkbox" name="character" value="lowerCaseCharacters" />
+      <label for="lowerCaseCharacters">Lowercase Characters</label><br />
+      <input type="checkbox" name="character" value="upperCaseCharacters" />
+      <label for="upperCaseCharacters">Uppercase Characters</label><br /><br />
+    </form>
+    <textarea
+      readonly
+      id="password"
+      placeholder="Your Secure Password"
+      aria-label="Generated Password"
+    ></textarea>
+    <button type="submit" id="generate">Generate Password</button>
+    <button id="copy">Copy to Clipboard</button>
+  </body>
+
+  <script src="script.js"></script>
+
+</html>
