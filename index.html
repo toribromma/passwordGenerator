@@ -4,37 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <title>Password Generator</title>
   </head>
-  <body>
+  <body class="text-center bg-light">
     <header>
-      <h1>Password Generator</h1>
+      <h1 class="mt-4 text-primary">Password Generator</h1>
     </header>
-    <h2>Generate a Password</h2>
+    <h2 class="p-2, mb-5">Generate a Password</h2>
+
+    <div class="bg-dark text-white m-5 p-3">
+      <div class="mb-2"> 
     <form>
-      <input type="checkbox" name="character" value="specialCharacters" />
+      <input class= "m-3" type="checkbox" name="character" value="specialCharacters" />
       <label for="specialCharacters"> Special characters</label><br />
-      <input type="checkbox" name="character" value="numericCharacters" />
+      <input class= "m-3" type="checkbox" name="character" value="numericCharacters" />
       <label for="numericCharacters"> Numeric Characters</label><br />
-      <input type="checkbox" name="character" value="lowerCaseCharacters" />
+      <input class= "m-3" type="checkbox" name="character" value="lowerCaseCharacters" />
       <label for="lowerCaseCharacters">Lowercase Characters</label><br />
-      <input type="checkbox" name="character" value="upperCaseCharacters" />
+      <input class= "m-3" type="checkbox" name="character" value="upperCaseCharacters" />
       <label for="upperCaseCharacters">Uppercase Characters</label><br />
       <label for="length">Length</label>
-      <input type="number" name="length" min="8" max="128" />
+      <input class= "m-3" type="number" name="length" min="8" max="128" />
 
       
       <br />
     </form>
 
-    <textarea
+    <textarea class="m-3"
       readonly
       id="password"
       placeholder="Your Secure Password"
       aria-label="Generated Password"
     ></textarea>
-    <button type="submit" id="generate">Generate Password</button>
-    <button id="copy">Copy to Clipboard</button>
+    <div>
+    <button class ="bg-success rounded" type="submit" id="generate">Generate Password</button>
+    <button class ="bg-success rounded" id="copy">Copy to Clipboard</button>
+  </div>
+  </div></div>
   </body>
 
   <script src="script.js"></script>
