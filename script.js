@@ -84,7 +84,7 @@ btn.addEventListener("click", (event) => {
   const selections = getSelectedCheckboxValues("character");
   document.getElementById("password").innerHTML = "";
 
-  if (selections.length < 2 || length < 8) {
+  if (selections.length < 2 || length < 8 || length === null) {
     console.log("Choose more than 2");
   } else {
     if (selections.indexOf("specialCharacters") !== -1) {
@@ -148,3 +148,14 @@ btn.addEventListener("click", (event) => {
     document.getElementById("password").innerHTML = password;
   }
 });
+
+var copy = document.getElementById("copy")
+
+copy.addEventListener("click", function(event) {
+  event.preventDefault();
+  var copyText = document.getElementById("password");
+  console.log(copyText.value)
+  copyText.select();
+  document.execCommand("copy");
+  alert("Copied the password: " + copyText.value);
+})
