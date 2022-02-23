@@ -84,13 +84,14 @@ btn.addEventListener("click", (event) => {
   const selections = getSelectedCheckboxValues("character");
   document.getElementById("password").innerHTML = "";
 
-  if (selections.length < 2 && length < 8 && length === null) {
-    console.log("Choose more than 2");
-  } else {
+  let availableCharacters = [];
+
+  if (selections.length >= 2 && length >= 8) {
     if (selections.indexOf("specialCharacters") !== -1) {
       var includedSpecialCharacter =
         specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
       includedCharacters.push(includedSpecialCharacter);
+      availableCharacters = availableCharacters.concat(specialCharacters);
       length--;
     }
 
@@ -98,6 +99,7 @@ btn.addEventListener("click", (event) => {
       var includedNumericCharacters =
         numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
       includedCharacters.push(includedNumericCharacters);
+      availableCharacters = availableCharacters.concat(lowerCaseCharacters);
       length--;
     }
 
@@ -107,7 +109,7 @@ btn.addEventListener("click", (event) => {
           Math.floor(Math.random() * lowerCaseCharacters.length)
         ];
       includedCharacters.push(includedLowerCaseCharacters);
-
+      availableCharacters = availableCharacters.concat(numericCharacters);
       length--;
     }
     if (selections.indexOf("upperCaseCharacters") !== -1) {
@@ -116,18 +118,13 @@ btn.addEventListener("click", (event) => {
           Math.floor(Math.random() * upperCaseCharacters.length)
         ];
       includedCharacters.push(includedUpperCaseCharacters);
-
+      availableCharacters = availableCharacters.concat(upperCaseCharacters);
       length--;
     }
-    let availableCharacters = [];
-    availableCharacters = availableCharacters.concat(specialCharacters);
-    availableCharacters = availableCharacters.concat(lowerCaseCharacters);
-    availableCharacters = availableCharacters.concat(numericCharacters);
-    availableCharacters = availableCharacters.concat(upperCaseCharacters);
 
-    // console.log(includedCharacters);
-    // console.log(length);
-    // console.log(availableCharacters);
+    console.log(includedCharacters);
+    console.log(length);
+    console.log(availableCharacters);
 
     let extraCharacters = [];
 
@@ -140,7 +137,7 @@ btn.addEventListener("click", (event) => {
       extraCharacters.push(element);
     }
 
-    // console.log(extraCharacters);
+    console.log(extraCharacters);
 
     let password = includedCharacters.concat(extraCharacters).join("");
     console.log(password);
@@ -149,13 +146,13 @@ btn.addEventListener("click", (event) => {
   }
 });
 
-var copy = document.getElementById("copy")
+var copy = document.getElementById("copy");
 
-copy.addEventListener("click", function(event) {
+copy.addEventListener("click", function (event) {
   event.preventDefault();
   var copyText = document.getElementById("password");
-  console.log(copyText.value)
+  console.log(copyText.value);
   copyText.select();
   document.execCommand("copy");
   alert("Copied the password: " + copyText.value);
-})
+});
