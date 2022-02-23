@@ -99,7 +99,7 @@ btn.addEventListener("click", (event) => {
       var includedNumericCharacters =
         numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
       includedCharacters.push(includedNumericCharacters);
-      availableCharacters = availableCharacters.concat(lowerCaseCharacters);
+      availableCharacters = availableCharacters.concat(numericCharacters);
       length--;
     }
 
@@ -109,7 +109,7 @@ btn.addEventListener("click", (event) => {
           Math.floor(Math.random() * lowerCaseCharacters.length)
         ];
       includedCharacters.push(includedLowerCaseCharacters);
-      availableCharacters = availableCharacters.concat(numericCharacters);
+      availableCharacters = availableCharacters.concat(lowerCaseCharacters);
       length--;
     }
     if (selections.indexOf("upperCaseCharacters") !== -1) {
