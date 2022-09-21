@@ -30,7 +30,7 @@ var specialCharacters = [
   "}",
   "|",
   "~",
-  "\\",
+  "\",
 ];
 
 var numericCharacters = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -92,7 +92,7 @@ btn.addEventListener("click", (event) => {
         specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
       includedCharacters.push(includedSpecialCharacter);
       availableCharacters = availableCharacters.concat(specialCharacters);
-      length--;
+      length = length - 2;
     }
 
     if (selections.indexOf("numericCharacters") !== -1) {
@@ -100,7 +100,7 @@ btn.addEventListener("click", (event) => {
         numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
       includedCharacters.push(includedNumericCharacters);
       availableCharacters = availableCharacters.concat(numericCharacters);
-      length--;
+      length = length - 2;
     }
 
     if (selections.indexOf("lowerCaseCharacters") !== -1) {
@@ -110,7 +110,7 @@ btn.addEventListener("click", (event) => {
         ];
       includedCharacters.push(includedLowerCaseCharacters);
       availableCharacters = availableCharacters.concat(lowerCaseCharacters);
-      length--;
+      length = length - 2;
     }
     if (selections.indexOf("upperCaseCharacters") !== -1) {
       var includedUpperCaseCharacters =
@@ -119,7 +119,7 @@ btn.addEventListener("click", (event) => {
         ];
       includedCharacters.push(includedUpperCaseCharacters);
       availableCharacters = availableCharacters.concat(upperCaseCharacters);
-      length--;
+      length = length - 2;
     }
 
     console.log(includedCharacters);
