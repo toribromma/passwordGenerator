@@ -88,19 +88,25 @@ btn.addEventListener("click", (event) => {
 
   if (selections.length >= 2 && length >= 8) {
     if (selections.indexOf("specialCharacters") !== -1) {
-      var includedSpecialCharacter =
+      var includedSpecialCharacterOne =
         specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
-      includedCharacters.push(includedSpecialCharacter);
+      includedCharacters.push(includedSpecialCharacterOne);
+      var includedSpecialCharacterTwo =
+        specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+       includedCharacters.push(includedSpecialCharacterTwo);
       availableCharacters = availableCharacters.concat(specialCharacters);
-      length = length - 2;
+      length === length - 2;
     }
 
     if (selections.indexOf("numericCharacters") !== -1) {
       var includedNumericCharacters =
         numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
       includedCharacters.push(includedNumericCharacters);
+      var includedNumericCharactersTwo =
+        numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
+      includedCharacters.push(includedNumericCharactersTwo);
       availableCharacters = availableCharacters.concat(numericCharacters);
-      length = length - 2;
+      length === length - 2;
     }
 
     if (selections.indexOf("lowerCaseCharacters") !== -1) {
@@ -109,8 +115,13 @@ btn.addEventListener("click", (event) => {
           Math.floor(Math.random() * lowerCaseCharacters.length)
         ];
       includedCharacters.push(includedLowerCaseCharacters);
+        var includedLowerCaseCharactersTwo =
+        lowerCaseCharacters[
+          Math.floor(Math.random() * lowerCaseCharacters.length)
+        ];
+      includedCharacters.push(includedLowerCaseCharactersTwo);
       availableCharacters = availableCharacters.concat(lowerCaseCharacters);
-      length = length - 2;
+      length === length - 2;
     }
     if (selections.indexOf("upperCaseCharacters") !== -1) {
       var includedUpperCaseCharacters =
@@ -118,8 +129,13 @@ btn.addEventListener("click", (event) => {
           Math.floor(Math.random() * upperCaseCharacters.length)
         ];
       includedCharacters.push(includedUpperCaseCharacters);
+       var includedUpperCaseCharactersTwo =
+        upperCaseCharacters[
+          Math.floor(Math.random() * upperCaseCharacters.length)
+        ];
+      includedCharacters.push(includedUpperCaseCharactersTwo);
       availableCharacters = availableCharacters.concat(upperCaseCharacters);
-      length = length - 2;
+      length === length - 2;
     }
 
     console.log(includedCharacters);
