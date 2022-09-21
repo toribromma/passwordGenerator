@@ -1,3 +1,5 @@
+let length;
+
 var specialCharacters = [
   "!",
   '"',
@@ -78,7 +80,7 @@ function getSelectedCheckboxValues(name) {
 const btn = document.querySelector("#generate");
 btn.addEventListener("click", (event) => {
   var includedCharacters = [];
-  let length = parseInt(document.querySelector(`input[name=length]`).value);
+  length = parseInt(document.querySelector(`input[name=length]`).value);
   // console.log(length);
   event.preventDefault();
   const selections = getSelectedCheckboxValues("character");
@@ -95,7 +97,7 @@ btn.addEventListener("click", (event) => {
         specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
        includedCharacters.push(includedSpecialCharacterTwo);
       availableCharacters = availableCharacters.concat(specialCharacters);
-      length === length - 2;
+      length = length - 2;
     }
 
     if (selections.indexOf("numericCharacters") !== -1) {
@@ -106,7 +108,7 @@ btn.addEventListener("click", (event) => {
         numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
       includedCharacters.push(includedNumericCharactersTwo);
       availableCharacters = availableCharacters.concat(numericCharacters);
-      length === length - 2;
+      length = length - 2;
     }
 
     if (selections.indexOf("lowerCaseCharacters") !== -1) {
@@ -121,7 +123,7 @@ btn.addEventListener("click", (event) => {
         ];
       includedCharacters.push(includedLowerCaseCharactersTwo);
       availableCharacters = availableCharacters.concat(lowerCaseCharacters);
-      length === length - 2;
+      length = length - 2;
     }
     if (selections.indexOf("upperCaseCharacters") !== -1) {
       var includedUpperCaseCharacters =
@@ -135,7 +137,7 @@ btn.addEventListener("click", (event) => {
         ];
       includedCharacters.push(includedUpperCaseCharactersTwo);
       availableCharacters = availableCharacters.concat(upperCaseCharacters);
-      length === length - 2;
+      length = length - 2;
     }
 
     console.log(includedCharacters);
