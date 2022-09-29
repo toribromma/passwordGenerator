@@ -1,5 +1,17 @@
 let length;
 
+function shuffle(string) {
+    var parts = string.split('');
+    for (var i = parts.length; i > 0;) {
+        var random = parseInt(Math.random() * i);
+        var temp = parts[--i];
+        parts[i] = parts[random];
+        parts[random] = temp;
+    }
+    return parts.join('');
+}
+
+
 var specialCharacters = [
   "!",
   '"',
@@ -159,8 +171,13 @@ btn.addEventListener("click", (event) => {
 
     let password = includedCharacters.concat(extraCharacters).join("");
     console.log(password);
+    
+    let shuffledPassword = shuffle(password);
+    
+    console.log(shuffledPassword)
 
-    document.getElementById("password").innerHTML = password;
+    document.getElementById("password").innerHTML = shuffledPassword;
+    
   }
 });
 
